@@ -21,15 +21,18 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div id="top" class="col">
         <h2>Call us</h2>
         <p>Know what you want and want to order fast? Call us at 555-0199</p>
+        </div>
+        <div class = "col" id="#daily">
         <h2>Daily Special</h2>
             <div id="#dailySpecial" class="dailySpecial col">
 
 
             </div>
 
-
+        </div>
 
 
         <nav class="navbar">
@@ -65,6 +68,7 @@
             try {
                 document.getElementById("#dailySpecial").classList.add(specialText);
                 try {document.getElementById("#dailySpecial").innerHTML = specialText.replace(/\W/g, ' ') + "<br>" + "<div id=#" + specialText + "><img src=img/"+specialImages[specialText]+" alt="+ specialImages[specialText]+ "> <br> <p>"+specialDesc[specialText]+"</p></div>";
+                    document.getElementById("#daily").classList.add(specialText.replace(/-.+/g, ''));
             }
         
                 finally {
@@ -77,6 +81,8 @@
         }
         let specials = ["Sunday-Special", "Monday-Special", "Tuesday-Special", "Wednesday-Special", "Thursday-Special", "Friday-Special", "Saturday-Special"];
         dailySpecial(specials[day]);
+
+
     //the special class will be how we insert the special into the document
     
 
