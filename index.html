@@ -63,7 +63,7 @@
         
         let date = new Date();
         let day = date.getDay();
-        let specialImages = {"Sunday-Special":"pizza1.jpg", "Monday-Special":"bread.jpg", "Tuesday-Special":"quiche.jpg", "Wednesday-Special":"sandwich.jpg", "Thursday-Special":"sausage.jpg", "Friday-Special":"tuna.jpg", "Saturday-Special":"chicken.jpg"};
+        let specialImages = {"Sunday-Special":"pizza1", "Monday-Special":"bread", "Tuesday-Special":"quiche", "Wednesday-Special":"sandwich", "Thursday-Special":"sausage", "Friday-Special":"tuna", "Saturday-Special":"chicken"};
         let specialDesc = {"Sunday-Special":"Enjoy your Sunday with a homemade Mediterranean style pizza with real tomatoes, spinach, and cottage cheese. Get your order in early.", 
         "Monday-Special":"You go to work on Mondays to make bread. So do we.", 
         "Tuesday-Special":"Our chef says this is a quiche, but our customers say it's delicious!", 
@@ -74,7 +74,7 @@
         let dailySpecial = function(specialText){
             try {
                 document.getElementById("#dailySpecial").classList.add(specialText);
-                try {document.getElementById("#dailySpecial").innerHTML = specialText.replace(/\W/g, ' ') + "<br>" + "<div id=#" + specialText + "><img src=img/"+specialImages[specialText]+" alt="+ specialImages[specialText]+ "> <br> <p>"+specialDesc[specialText]+"</p></div>";
+                try {document.getElementById("#dailySpecial").innerHTML = specialText.replace(/\W/g, ' ') + "<br>" + "<div id=#" + specialText + "><a href=menu.html#" + specialImages[specialText] + "><img src=img/"+specialImages[specialText]+".jpg alt="+ specialImages[specialText]+ "></a> <br> <p>"+specialDesc[specialText]+"</p></div>";
                     document.getElementById("#daily").classList.add(specialText.replace(/-.+/g, ''));
             }
         
